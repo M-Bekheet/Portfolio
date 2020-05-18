@@ -1,3 +1,22 @@
 .work{
   height: 1000px;
 }
+
+.samples{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.sample{
+  flex-basis: 28%;
+}
+
+.img{
+  overflow: hidden;
+  margin-bottom: 50px;
+  height: 280px;  
+  img{
+    height: auto !important;
+  }
+}

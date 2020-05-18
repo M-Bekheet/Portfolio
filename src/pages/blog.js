@@ -24,12 +24,10 @@ const BlogPage = () => {
     `
   );
 
-  console.log(data)
-
   return (
     <Layout>
-      <h1>Blog</h1>
-      <div >
+      <section>
+        <h3 className="section-title">Blog</h3>
         <ul className={blogStyles.posts}>
           {
             data.allContentfulBlogPost.edges.map((edge, index) => (
@@ -46,9 +44,7 @@ const BlogPage = () => {
             ))
           }
         </ul>
-      </div>
-
-
+      </section>
     </Layout>
   )
 }

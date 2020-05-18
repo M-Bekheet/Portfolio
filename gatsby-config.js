@@ -1,11 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Mahmoud Ahmed Portfolio`,
-    description: `Freelance Front-end / ReactJS Developer Portfolio`,
+    title: `Mahmoud Ahmed`,
+    description: `Freelance Front-end / ReactJS Developer`,
     author: `@7odaGeek`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -21,8 +23,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

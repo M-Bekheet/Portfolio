@@ -444,6 +444,9 @@ blockquote {
   padding-top: 0;
   margin-bottom: 1.45rem;
 }
+blockquote:before{
+  content: open-quote
+}
 form {
   margin-left: 0;
   margin-right: 0;

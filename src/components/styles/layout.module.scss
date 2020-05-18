@@ -1,3 +1,6 @@
+$main-color: #ff4ba8;
+$secondary-color: #0b1124;
+
 .layout{
   background: url('../../images/glassy-bg.jpg');
   background-size: cover;
@@ -16,3 +19,56 @@
   overflow: hidden;
   background: rgba(11,17,36,0.6);
 }
+
+
+// Helpful classes
+:global{
+  .colored{
+    color: $main-color;
+  }
+
+  .button{
+    cursor: pointer;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    margin-left: 0;
+    transition: all 0.5s ease-in-out;
+    outline: none;
+    background: rgba(11,17,36,0.3);
+    color: #fff;
+    border: 1px solid rgba(11,17,36,0.3);
+    
+    &:hover{
+      border: 1px solid #fff;
+      background: transparent;;
+    }
+
+    &.colored{
+      background: $main-color;
+      border-color: $main-color;
+      
+      &:hover{
+        background: transparent;
+      }
+    }
+  }
+
+  .section-title{
+    font-size: 2rem;
+    position: relative;
+    margin-bottom: 70px;
+    margin-top: 40px;
+
+    &:after{
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 110px;
+      height: 3px;
+      margin-top: 10px;
+      background: $main-color;
+    }
+  }
+} 

@@ -7,31 +7,21 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
 import layoutStyles from "./styles/layout.module.scss"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const Layout = ({ children, title }) => {
+  
 
   return (
     <div className={layoutStyles.layout}>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={"title"} />
       <div className={layoutStyles.content}>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built by
           {` `}
-          <a href="https://www.twitter.com/7odaGeek">Mahmoud Ahmed</a>
+          <a href="https://www.twitter.com/7odaGeek">{title}</a>
           , Designed By <a href="https://dribbble.com/realvjy">vijay verma</a>
         </footer>
       </div>
