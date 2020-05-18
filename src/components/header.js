@@ -40,6 +40,9 @@ const Header = ({ siteTitle }) => (
         <li className={headerStyles.navItem}>
           <Link activeClassName={headerStyles.activeItem} to="/blog">Blog</Link>
         </li>
+        <li className={headerStyles.navItem}>
+          <Link activeClassName={headerStyles.activeItem} to="/contact">Contact</Link>
+        </li>
       </Scrollspy>
     </nav>
   </header>

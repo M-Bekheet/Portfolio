@@ -47,14 +47,22 @@ export const Work = () => {
 
               <div className={workStyles.sampleLink}>
                 {
-                  <a href={imagesInfo[childImageSharp.fluid.src.slice(childImageSharp.fluid.src.lastIndexOf('/') + 1, childImageSharp.fluid.src.lastIndexOf('.'))][1]} target="_blank">Link</a>
+                  <a 
+                    href={imagesInfo[childImageSharp.fluid.src.slice(childImageSharp.fluid.src.lastIndexOf('/') + 1, childImageSharp.fluid.src.lastIndexOf('.'))][1]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >Link</a>
                 }
               </div>
               {
 
               imagesInfo[childImageSharp.fluid.src.slice(childImageSharp.fluid.src.lastIndexOf('/') + 1, childImageSharp.fluid.src.lastIndexOf('.'))][2] && (
                 <div className={workStyles.sampleLink}>
-                  <a href={imagesInfo[childImageSharp.fluid.src.slice(childImageSharp.fluid.src.lastIndexOf('/') + 1, childImageSharp.fluid.src.lastIndexOf('.'))][2]} target="_blank">Repo</a>
+                  <a 
+                    href={imagesInfo[childImageSharp.fluid.src.slice(childImageSharp.fluid.src.lastIndexOf('/') + 1, childImageSharp.fluid.src.lastIndexOf('.'))][2]} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >Repo</a>
                 </div>
                 )
               }
