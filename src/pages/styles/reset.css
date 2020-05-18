@@ -2,6 +2,7 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -615,6 +616,12 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
+
+section{
+  padding-top: 50px;
+  scroll-behavior: smooth;
+}
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
