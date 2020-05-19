@@ -1,48 +1,37 @@
 import React, { useState } from 'react'
-import axios from 'axios';
+import { navigate } from 'gatsby-link'
 import Layout from '../components/layout';
 import contactStyles from './styles/contact.module.scss'
 import SEO from '../components/seo'
 
+
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+
 const Contact = (props) => {
   
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [description, setDescription] = useState('')
-  const [company, setCompanyName] = useState('')
-  const [position, setPosition] = useState('')
-  const [submitMsg, setSubmitMsg] = useState('')
+  const [state, setState] = useState({})
+
+  const handleChange = e => {
+    setState({ ...state, [e.target.name]: e.target.value })
+  }
 
   const handleSubmit = e => {
-    e.preventDefault();
-
-    setSubmitMsg('');
-    
-    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    
-
-    if( regex.test(String(email).toLowerCase()) && name.length > 2 && description.length > 5){
-      axios.post('http://localhost:5000/emails/contact', { description, name, email, company, position })
-        .then(res => {
-          if(res.status === 201){
-            setName('')
-            setEmail('')
-            setDescription('')
-            setCompanyName('')
-            setPosition('');
-            setSubmitMsg('Form submitted successfully')
-          }
-          else if(res.status === 400){
-            setSubmitMsg('Kindly make sure you entered the description, your name, and email correctly')
-          }
-          else{
-            setSubmitMsg('Something went wrong. Kindly try again later')
-          }
-        })
-        .catch(e => {
-          setSubmitMsg('Kindly make sure you entered the description, your name, and email correctly')
-        })
-    }
+      e.preventDefault()
+      const form = e.target
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({
+          'form-name': form.getAttribute('name'),
+          ...state,
+        }),
+      })
+      .then(() => navigate(form.getAttribute('action')))
+      .catch((error) => alert(error))
   }
 
   return (
@@ -50,51 +39,71 @@ const Contact = (props) => {
       <SEO title="Contact" />
       <section className={contactStyles.contact}>
         <h3 className="section-title">Contact</h3>
-        <form onSubmit={handleSubmit}>
-          
+
+        <form 
+          name="contact"
+          method="post"
+          action="/thanks/"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
+        >
+          <p hidden>
+            <label>
+              Don’t fill this out: <input name="bot-field" onChange={handleChange} />
+            </label>
+          </p>
+
+          <input type="hidden" name="form-name" value="contact" />
+
           <label htmlFor="project-desc">Project brief description</label>
           <textarea 
-            value={description}
+            name="description"
             id="project-desc" 
             className={contactStyles.description} 
             rows="6"
             placeholder="Project Type, Target customer, timeline, estimate etc"
-            onChange={e => setDescription(e.target.value)}
             required
-            ></textarea>
+            onChange={handleChange} 
+          />
           
           <label htmlFor="about_you">About You</label>
           <input 
-            value={name}
+            name="name"
             type="text" 
             id="about_you" 
             placeholder="Full Name" 
-            onChange={e => setName(e.target.value)}
+            onChange={handleChange}
             required
           />
           <input 
-            value={email}
+            name="email"
             type="email" 
             placeholder="Email Address" 
-            onChange={e => setEmail(e.target.value)} 
+            onChange={handleChange} 
             required
           />
           <input 
-            value={company}
-            type="text" 
+            type="text"
+            name="company" 
             placeholder="Company Name" 
-            onChange={e => setCompanyName(e.target.value)}
+            onChange={handleChange}
           />
           <input 
-            value={position}
             type="text" 
+            name="position"
             placeholder="Position" 
-            onChange={e => setPosition(e.target.value)}
+            onChange={handleChange}
           />
 
-          <input type="submit" className={contactStyles.submit + " button colored"} value="Request a quote"/>
+          <button 
+            type="submit" 
+            className={contactStyles.submit + " button colored"} 
+          >
+            Request a quote
+          </button>
         </form>
-        <p className={`${contactStyles.msg} + ${submitMsg ? '' : " hidden"} `}>{submitMsg}</p>
+        {/* <p className={`${contactStyles.msg} + ${submitMsg ? '' : " hidden"} `}>{submitMsg}</p> */}
 
       </section>
     </Layout>
