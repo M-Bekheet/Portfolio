@@ -5,6 +5,7 @@ module.exports = {
     author: `@7odaGeek`,
   },
   plugins: [
+    // 'gatsby-concurrent-mode',
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

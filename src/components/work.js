@@ -42,7 +42,6 @@ export const Work = () => {
     }
   `)
 
-  console.log(data.icons.nodes[0].childImageSharp)
 
   return (
     <section id="work" className={workStyles.work}>

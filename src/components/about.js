@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'gatsby'
+
 import aboutStyles from './styles/about.module.scss'
 
 export const About = ({ title, description }) => {
@@ -13,8 +15,12 @@ export const About = ({ title, description }) => {
         </div>
         <p className={aboutStyles.description + " colored"}>{description}</p>
         <p className={aboutStyles.jobDescription}>Currently building web applications in React / JavaScript</p>
-        <button className={aboutStyles.hireMe + " button colored"}>Hire me</button>
-        <button className={aboutStyles.knowMore + " button"}>Know more</button>
+        <Link to="/contact" className={aboutStyles.hireMe + " button colored"}>
+          Hire me
+        </Link>
+        <Link to="/#testimonials" className={aboutStyles.knowMore + " button"}>
+          Know more
+        </Link>
         <blockquote className={aboutStyles.quote}>Knowledge is power</blockquote>
       </div>
     </section>

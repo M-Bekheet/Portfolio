@@ -29,6 +29,16 @@ body{
 
 // Helpful classes
 :global{
+
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .hidden{
+    visibility: hidden;
+  }
+
   .colored{
     color: $main-color;
   }
@@ -76,7 +86,7 @@ body{
       position: absolute;
       top: 100%;
       left: 0;
-      width: 110px;
+      width: 100px;
       height: 3px;
       margin-top: 10px;
       background: $main-color;
@@ -86,6 +96,10 @@ body{
 
 
 @media all and (max-width: 768px){
+  html{
+    font-size: 75%;
+  }
+  
   .content{
     width: 100%;
   }

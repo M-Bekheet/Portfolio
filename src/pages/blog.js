@@ -29,7 +29,7 @@ const BlogPage = () => {
   return (
     <Layout>
       <SEO title="Blog" />
-      <section>
+      <section className={blogStyles.blog}>
         <h3 className="section-title">Blog</h3>
         <ul className={blogStyles.posts}>
           {

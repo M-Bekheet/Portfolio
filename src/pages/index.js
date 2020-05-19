@@ -21,7 +21,6 @@ const IndexPage = () => {
 
   let {title, description} = data.site.siteMetadata;
 
-  console.log(data)
   return(
     <Layout title={title}>
       <SEO title="Home" />

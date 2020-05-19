@@ -17,12 +17,13 @@
 
     &::placeholder{
       font-weight: 400;
-      color: rgba(255,255,255,0.24);
+      color: rgba(255,255,255,0.45);
     }
   }
   
   textarea{
     resize: vertical;
+    min-height: 100px;
     display: block;
     width: 100%;
   }
@@ -39,6 +40,11 @@
     margin-top: 20px;
   }
 
+}
+
+.msg{
+  visibility: visible;
+  height: 20px;
 }
 
 :global{

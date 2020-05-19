@@ -1,10 +1,8 @@
 .work{
 }
 
-:global{
-  .section-title:after{
-    width: 85px;
-  }
+.work :global .section-title:after{
+  width: 85px;
 }
 
 .samples{

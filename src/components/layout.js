@@ -14,7 +14,6 @@ import './styles/reset.css'
 import layoutStyles from "./styles/layout.module.scss"
 
 const Layout = ({ children, title }) => {
-  console.log(title)
   return (
     <div className={layoutStyles.layout}>
       <Header siteTitle={"title"} />

@@ -1,10 +1,8 @@
 .testimonials{
 }
 
-:global{
-  .section-title:after{
-    width: 192px;
-  }
+.testimonials :global .section-title:after{
+  width: 192px;
 }
 
 .legend{
