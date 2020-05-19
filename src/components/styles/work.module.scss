@@ -1,5 +1,10 @@
 .work{
-  height: 1000px;
+}
+
+:global{
+  .section-title:after{
+    width: 85px;
+  }
 }
 
 .samples{
@@ -10,14 +15,34 @@
 
 .sample{
   flex-basis: 28%;
-  margin-bottom: 70px;
+  text-align: center;
 }
 
 .img{
   overflow: hidden;
-  margin-bottom: 30px;
+  margin-bottom: 8px;
   height: 280px;  
   img{
     height: auto !important;
+  }
+}
+
+.sampleName{
+  color: #d7d7d7;
+}
+
+.sampleLink{
+  display: inline-block;
+  padding: 8px 15px;
+}
+
+
+@media all and (max-width: 768px){
+  .sample{
+    flex-basis: 45%;
+  }
+
+  .img{
+    height: 250px;
   }
 }

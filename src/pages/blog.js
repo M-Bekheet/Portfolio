@@ -1,6 +1,8 @@
 import React from "react"
 import Layout from '../components/layout';
 import { Link, graphql, useStaticQuery } from 'gatsby';
+import SEO from '../components/seo'
+
 import blogStyles from './styles/blog.module.scss';
 
 const BlogPage = () => {
@@ -26,6 +28,7 @@ const BlogPage = () => {
 
   return (
     <Layout>
+      <SEO title="Blog" />
       <section>
         <h3 className="section-title">Blog</h3>
         <ul className={blogStyles.posts}>

@@ -1,6 +1,5 @@
 import React from "react"
 
-import './styles/reset.css';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { About } from '../components/about'
@@ -22,6 +21,7 @@ const IndexPage = () => {
 
   let {title, description} = data.site.siteMetadata;
 
+  console.log(data)
   return(
     <Layout title={title}>
       <SEO title="Home" />

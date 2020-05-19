@@ -10,9 +10,9 @@ export const Testimonials = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "avatar.png" }) {
+      placeholderImage: file(relativePath: { eq: "client.png" }) {
         childImageSharp {
-          fixed(width: 300) {
+          fixed(width: 80) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -24,7 +24,7 @@ export const Testimonials = () => {
     <section id="testimonials" className={testimonialsStyles.testimonials}>
       <h3 className="section-title">Testimonials</h3>
 
-      <Carousel showStatus={false}>
+      <Carousel showStatus={false} showThumbs={false}>
         <div>
           <Img alt="slide1" fixed={data.placeholderImage.childImageSharp.fixed} />
           <p className={testimonialsStyles.legend}>Very responsive, and very flexible in terms of time and direction. Definitely recommended!</p>

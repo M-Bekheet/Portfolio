@@ -8,22 +8,19 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Header from "./header"
+import Footer from "./footer"
+
+import './styles/reset.css'
 import layoutStyles from "./styles/layout.module.scss"
 
 const Layout = ({ children, title }) => {
-  
-
+  console.log(title)
   return (
     <div className={layoutStyles.layout}>
       <Header siteTitle={"title"} />
       <div className={layoutStyles.content}>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built by
-          {` `}
-          <a href="https://www.twitter.com/7odaGeek">{title}</a>
-          , Designed By <a href="https://dribbble.com/realvjy">vijay verma</a>
-        </footer>
+        <Footer title={title}/>
       </div>
     </div>
   )

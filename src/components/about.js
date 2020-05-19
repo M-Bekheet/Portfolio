@@ -12,10 +12,10 @@ export const About = ({ title, description }) => {
           <span className="colored">.</span>
         </div>
         <p className={aboutStyles.description + " colored"}>{description}</p>
-        <p className={aboutStyles.jobDescription}>currently building web application in React / JavaScript</p>
+        <p className={aboutStyles.jobDescription}>Currently building web applications in React / JavaScript</p>
         <button className={aboutStyles.hireMe + " button colored"}>Hire me</button>
         <button className={aboutStyles.knowMore + " button"}>Know more</button>
-        <blockquote>Knowledge is power</blockquote>
+        <blockquote className={aboutStyles.quote}>Knowledge is power</blockquote>
       </div>
     </section>
   )

@@ -7,15 +7,19 @@ import workStyles from './styles/work.module.scss'
 export const Work = () => {
 
   const imagesInfo = {
-    pomodoro: ['Pomodoro Web App', 'SSp', 'DD'],
-    portfolio: ['Portfolio', 'EE'],
-    restaurant: ['Restatuant Website', 'RR'],
-    weather: ['Weather App Landing Page', 'WW', "MM"]
+    pomodoro: ['Pomodoro Web App', 'https://pomodoro-react-app.netlify.com', 'https://github.com/Lartwel/pomodoro-app'],
+    // portfolio: ['Portfolio', 'http://mahmoud-ahmed.eb2a.com/'],
+    restaurant: ['Restatuant Website', 'https://goo.gl/XgzNJe'],
+    weather: ['Weather App Landing Page', 'https://goo.gl/sDYhJk'],
+    wooder: ['Furniture Agency Website', 'https://lartwel.github.io/wooder', 'https://github.com/Lartwel/Wooder']
   }
 
   const data = useStaticQuery(graphql`
     query {
-       images: allFile(filter: { relativeDirectory: { eq: "samples" } } ){
+       images: allFile(
+          filter: { relativeDirectory: { eq: "samples" } },
+          sort:{ fields:name, order:DESC } 
+          ){
         nodes{
           id
           childImageSharp {
@@ -25,10 +29,20 @@ export const Work = () => {
           }
         }
       }
+      icons : allFile(filter: { relativeDirectory: { eq: "social" } } ){
+        nodes{
+          id
+          childImageSharp {
+            fixed(width:20) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+      }
     }
   `)
 
-  console.log(data.images.nodes)
+  console.log(data.icons.nodes[0].childImageSharp)
 
   return (
     <section id="work" className={workStyles.work}>
@@ -38,7 +52,14 @@ export const Work = () => {
 
         {data.images.nodes.map(({ childImageSharp, id }) => (
           <div className={workStyles.sample} key={id}>
-            <Img fluid={childImageSharp.fluid} className={workStyles.img} />
+
+            <a 
+              href={imagesInfo[childImageSharp.fluid.src.slice(childImageSharp.fluid.src.lastIndexOf('/') + 1, childImageSharp.fluid.src.lastIndexOf('.'))][1]}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Img fluid={childImageSharp.fluid} className={workStyles.img} />
+            </a>
               <div className={workStyles.sampleName}>
                 {
                   imagesInfo[childImageSharp.fluid.src.slice(childImageSharp.fluid.src.lastIndexOf('/') + 1, childImageSharp.fluid.src.lastIndexOf('.'))][0]
@@ -51,7 +72,9 @@ export const Work = () => {
                     href={imagesInfo[childImageSharp.fluid.src.slice(childImageSharp.fluid.src.lastIndexOf('/') + 1, childImageSharp.fluid.src.lastIndexOf('.'))][1]}
                     target="_blank"
                     rel="noopener noreferrer"
-                  >Link</a>
+                >
+                  <img src={data.icons.nodes.find(icon => icon.childImageSharp.fixed.src.includes('link')).childImageSharp.fixed.src} alt="link" />
+                </a>
                 }
               </div>
               {
@@ -62,7 +85,9 @@ export const Work = () => {
                     href={imagesInfo[childImageSharp.fluid.src.slice(childImageSharp.fluid.src.lastIndexOf('/') + 1, childImageSharp.fluid.src.lastIndexOf('.'))][2]} 
                     target="_blank"
                     rel="noopener noreferrer"
-                  >Repo</a>
+                  >{
+                      <img src={data.icons.nodes.find(icon => icon.childImageSharp.fixed.src.includes('github')).childImageSharp.fixed.src} alt="github"/>
+                  }</a>
                 </div>
                 )
               }

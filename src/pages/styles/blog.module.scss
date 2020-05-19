@@ -3,8 +3,13 @@
   margin-top: 3rem;
 }
 
+:global{
+  .section-title:after{
+    width: 85px;
+  }
+}
+
 .post {
-  background: #f8f8f8;
   padding: 1rem 1rem 0.5rem;
   line-height: 2;
   transition: 0.3s background ease-in-out;
@@ -18,7 +23,7 @@
     justify-content: space-between;
     align-items: baseline;
     text-decoration: none;
-    color: #333;
+    color: #f7f7f7;
   }
 }
 

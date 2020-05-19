@@ -1,5 +1,46 @@
 .about{
-  height: 1000px;
+}
+
+.info{
+
+}
+
+.name{
+  font-size: 2.7rem;
+  font-weight: 700;
+}
+
+.description{
+  padding-top: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  
+}
+
+.jobDescription{
+  opacity: 0.58;
+  max-width: 500px;
+}
+
+.quote{
+  position: relative;
+  margin-left: 40px;
+  margin-top: 40px;
+  font-size: 1.3rem;
+  z-index: 3;
+  opacity: 0.4;
+
+  &:before{
+    position: absolute;
+    top: 144%;
+    z-index: 1;
+    left: -50px;
+    content: open-quote;
+    font-size: 175px;
+    font-weight: 700;
+    right: 100%;
+    opacity: 0.4;
+  }
 }
 
 .hireMe{

@@ -1,12 +1,17 @@
 $main-color: #ff4ba8;
 $secondary-color: #0b1124;
 
+body{
+  font-family: 'Raleway', sans-serif;
+}
+
 .layout{
   background: url('../../images/glassy-bg.jpg');
   background-size: cover;
   color: #fff;
   min-height: 100vh;
   overflow: hidden;
+  position: relative;
 }
 
 
@@ -15,6 +20,7 @@ $secondary-color: #0b1124;
   min-height: 100vh;
   padding-left: 10%;
   padding-right: 10%;
+  padding-bottom: 70px;
   float: right;
   overflow: hidden;
   background: rgba(11,17,36,0.6);
@@ -54,11 +60,16 @@ $secondary-color: #0b1124;
     }
   }
 
+  section{
+    margin-bottom: 100px;
+  }
+
   .section-title{
     font-size: 2rem;
     position: relative;
-    margin-bottom: 70px;
+    margin-bottom: 100px;
     margin-top: 40px;
+    font-weight: 400;
 
     &:after{
       content: "";
@@ -72,3 +83,10 @@ $secondary-color: #0b1124;
     }
   }
 } 
+
+
+@media all and (max-width: 768px){
+  .content{
+    width: 100%;
+  }
+}

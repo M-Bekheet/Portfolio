@@ -35,8 +35,8 @@ const BlogPage = (props) => {
 
   return (
     <Layout>
-      <h1 className={postStyles.postTitle}>{props.data.contentfulBlogPost.title}</h1>
       <div className={postStyles.post}>
+        <h1 className={postStyles.postTitle}>{props.data.contentfulBlogPost.title}</h1>
         {
           documentToReactComponents(props.data.contentfulBlogPost.body.json, options)
         }

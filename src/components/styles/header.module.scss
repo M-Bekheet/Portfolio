@@ -7,11 +7,23 @@
   top: 0;
   height: 100%;
   width: 18%;
+
+  .toggleNav{
+    display: none;
+    align-items: center;
+    font-size: 22px;
+    span{
+      color: #fff;
+      margin-top: -2px;
+      padding-right: 5px;
+    }
+  }
 }
 
 .devImg{
   margin: 100px auto 10px;
-
+  text-align: center;
+  
   img{
     max-width: 120px;
   }
@@ -70,5 +82,61 @@
 
   a{
     color: #ff4ba8;
+  }
+}
+
+
+
+
+
+@media all and (max-width: 768px){
+  .header{
+    flex-wrap: wrap;
+    position: static;
+    height: auto;
+    width: auto;
+
+    .devImg {
+      margin: 8px auto 0;
+
+      img{
+        max-width: 57px;
+        margin: 0;
+      }
+    }
+
+    .toggleNav{
+      display: flex;
+      padding-left: 15px;
+      margin: auto;
+      padding: 12px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .nav{
+      max-height: 0;
+      transition: all 1s 0s linear;
+      overflow: hidden;
+      flex: 1 1 100%;
+      flex-direction: column;
+      text-align: center;
+
+      ul {
+        flex-direction: column;
+        line-height: 1.7em;
+        
+        a{
+          flex-basis: 100%;
+          justify-content: center;
+          padding: 0;
+        }
+      }
+    }
+    
+    :global .open{
+      max-height: 600px;
+      padding-bottom: 10px;
+    }
   }
 }
