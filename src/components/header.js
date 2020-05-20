@@ -48,30 +48,27 @@ const Header = ({ siteTitle }) => {
         <Scrollspy items={['about', 'work', 'testimonials']} currentClassName="active-nav-link"  >
           <li className={headerStyles.navItem}>
             <AnchorLink
-              activeClassName={headerStyles.activeItem}
               to="/"
               title="About"
             />
           </li>
           <li className={headerStyles.navItem}>
             <AnchorLink
-              activeClassName={headerStyles.activeItem}
               to="/#work"
               title="Work"
             />
           </li>
           <li className={headerStyles.navItem}>
             <AnchorLink
-              activeClassName={headerStyles.activeItem}
               to="/#testimonials"
               title="Testimonials"
             />
           </li>
           <li className={headerStyles.navItem}>
-            <Link activeClassName={headerStyles.activeItem} to="/blog">Blog</Link>
+            <Link activeClassName={"active-nav-link"} to="/blog">Blog</Link>
           </li>
           <li className={headerStyles.navItem}>
-            <Link activeClassName={headerStyles.activeItem} to="/contact">Contact</Link>
+            <Link activeClassName={"active-nav-link"} to="/contact">Contact</Link>
           </li>
         </Scrollspy>
       </nav>
