@@ -5,7 +5,6 @@ module.exports = {
     author: `@7odaGeek`,
   },
   plugins: [
-    // 'gatsby-concurrent-mode',
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -30,17 +29,14 @@ module.exports = {
         name: `mahmoud-ahmed-portfolio`,
         short_name: `portfolio`,
         start_url: `/`,
-        background_color: `#0c1225`,
-        theme_color: `#ff4ba8`,
+        theme_color: `#0c1225`,
+        background_color: `#ff4ba8`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
       resolve: "gatsby-plugin-anchor-links",
-      options: {
-        // offset: -100
-      }
     },
     {
       resolve: `gatsby-plugin-google-fonts`,

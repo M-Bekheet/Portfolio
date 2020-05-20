@@ -14,13 +14,20 @@ function encode(data) {
 const Contact = (props) => {
   
   const [state, setState] = useState({})
+  const [errorMsg, setErrorMsg] = useState('')
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = e => {
-      e.preventDefault()
+
+      setErrorMsg('');
+
+      if(state.name.length < 3 || state.email.length < 6 || state.description.length < 10 ){
+        setErrorMsg('Kindly make sure you entered your Name, Email, and Job Description correctly.')
+      }
+
       const form = e.target
       fetch('/', {
         method: 'POST',
@@ -30,8 +37,17 @@ const Contact = (props) => {
           ...state,
         }),
       })
-      .then(() => navigate(form.getAttribute('action')))
+      .then(() => {
+        let newState = {}
+        for(let key in state){
+          newState[key] = ''          
+        }
+        setState(newState)
+      })
       .catch((error) => alert(error))
+
+    e.preventDefault();
+
   }
 
   return (
@@ -43,7 +59,6 @@ const Contact = (props) => {
         <form 
           name="contact"
           method="post"
-          action="/thanks/"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
@@ -59,6 +74,7 @@ const Contact = (props) => {
           <label htmlFor="project-desc">Project brief description</label>
           <textarea 
             name="description"
+            value={state.description}
             id="project-desc" 
             className={contactStyles.description} 
             rows="6"
@@ -70,29 +86,33 @@ const Contact = (props) => {
           <label htmlFor="about_you">About You</label>
           <input 
             name="name"
+            value={state.name}
             type="text" 
             id="about_you" 
             placeholder="Full Name" 
             onChange={handleChange}
             required
-          />
+            />
           <input 
             name="email"
+            value={state.email}
             type="email" 
             placeholder="Email Address" 
             onChange={handleChange} 
             required
-          />
+            />
           <input 
             type="text"
             name="company" 
-            placeholder="Company Name" 
+            value={state.company}
+            placeholder="Company Name (optional)" 
             onChange={handleChange}
-          />
+            />
           <input 
             type="text" 
             name="position"
-            placeholder="Position" 
+            value={state.position}
+            placeholder="Position (optional)" 
             onChange={handleChange}
           />
 
@@ -103,7 +123,7 @@ const Contact = (props) => {
             Request a quote
           </button>
         </form>
-        {/* <p className={`${contactStyles.msg} + ${submitMsg ? '' : " hidden"} `}>{submitMsg}</p> */}
+        <p className={`${contactStyles.msg} + ${errorMsg ? '' : " hidden"} `}>{errorMsg}</p>
 
       </section>
     </Layout>

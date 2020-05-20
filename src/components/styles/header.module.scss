@@ -20,11 +20,13 @@
   }
 }
 
-.devImg{
+.imgWrapper{
   margin: 100px auto 10px;
   text-align: center;
   
-  img{
+  .img, img{
+    text-align: center;
+    margin: auto;
     max-width: 120px;
   }
 }
@@ -96,11 +98,13 @@
     height: auto;
     width: auto;
 
-    .devImg {
+    .imgWrapper {
       margin: 8px auto 0;
+      width: 57px;
 
-      img{
-        max-width: 57px;
+      .img, img{
+        max-width: 100% !important;
+        max-height: 100% !important;
         margin: 0;
       }
     }
@@ -145,5 +149,11 @@
       max-height: 600px;
       padding-bottom: 10px;
     }
+  }
+}
+
+@media all and (max-width: 991px) and (min-width: 768px){
+  .navItem{
+    font-size: 0.9rem;
   }
 }

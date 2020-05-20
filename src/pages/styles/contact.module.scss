@@ -47,11 +47,6 @@
   height: 20px;
 }
 
-:global{
-  .section-title:after{
-    width: 125px;
-  }
-}
 
 @media(max-width: 768px){
   .contact{

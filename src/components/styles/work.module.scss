@@ -1,10 +1,6 @@
 .work{
 }
 
-.work :global .section-title:after{
-  width: 85px;
-}
-
 .samples{
   display: flex;
   justify-content: space-between;
@@ -14,6 +10,7 @@
 .sample{
   flex-basis: 28%;
   text-align: center;
+  margin-bottom: 25px;
 }
 
 .img{
@@ -32,15 +29,30 @@
 .sampleLink{
   display: inline-block;
   padding: 8px 15px;
+
+  img{
+    margin-bottom: 0;
+  }
 }
 
 
-@media all and (max-width: 768px){
+@media all and (max-width: 1224px){
   .sample{
     flex-basis: 45%;
   }
-
   .img{
-    height: 250px;
+    height: 180px;
   }
 }
+
+@media all and (max-width: 768px){
+  .sample{
+    flex-basis: 100%;
+    margin-bottom: 50px;
+  }
+
+  .img{
+    height: 300px;
+  }
+}
+
