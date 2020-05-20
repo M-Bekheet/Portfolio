@@ -29,7 +29,7 @@ module.exports = {
         name: `mahmoud-ahmed-portfolio`,
         short_name: `portfolio`,
         start_url: `/`,
-        theme_color: `#ff4ba8`,
+        theme_color: `#1a182f`,
         background_color: `#ff4ba8`,
         display: `minimal-ui`,
         icon: `src/images/avatar.png`, // This path is relative to the root of the site.
