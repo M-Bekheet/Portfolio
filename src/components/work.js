@@ -57,7 +57,7 @@ export const Work = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Img fluid={childImageSharp.fluid} className={workStyles.img} />
+              <Img fluid={childImageSharp.fluid} className={workStyles.img} alt="sample"/>
             </a>
               <div className={workStyles.sampleName}>
                 {

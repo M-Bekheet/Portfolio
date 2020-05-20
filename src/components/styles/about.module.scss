@@ -1,8 +1,9 @@
 .about{
+  display: flex;
 }
 
 .info{
-
+  flex: 2;
 }
 
 .name{
@@ -46,10 +47,27 @@
   }
 }
 
+.avatar{
+  flex: 1;
+  opacity: 0.05;
+  position: relative;
+  overflow: visible !important;
+  
+  img:not([aria-hidden="true"]){
+    max-width: 100% !important;
+    max-height: 100% !important;
+    height: auto !important; 
+    top: calc(50% - 60px) !important;
+    margin: -50% 0 0 !important;
+  }
+}
 
 
 @media all and (max-width: 768px){
   .quote:before{
     top: 205%
+  }
+  .avatar{
+    display: none !important;
   }
 }
