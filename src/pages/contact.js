@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { navigate } from 'gatsby-link'
 import Layout from '../components/layout';
 import contactStyles from './styles/contact.module.scss'
 import SEO from '../components/seo'
