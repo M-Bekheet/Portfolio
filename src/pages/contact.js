@@ -14,7 +14,7 @@ function encode(data) {
 const Contact = (props) => {
   
   const [state, setState] = useState({})
-  const [errorMsg, setErrorMsg] = useState('')
+  const [msg, setMsg] = useState('')
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -22,10 +22,10 @@ const Contact = (props) => {
 
   const handleSubmit = e => {
 
-      setErrorMsg('');
+      setMsg('');
 
       if(state.name.length < 3 || state.email.length < 6 || state.description.length < 10 ){
-        setErrorMsg('Kindly make sure you entered your Name, Email, and Job Description correctly.')
+        setMsg('Kindly make sure you entered your Name, Email, and Job Description correctly.')
       }
 
       const form = e.target
@@ -38,13 +38,16 @@ const Contact = (props) => {
         }),
       })
       .then(() => {
+        setMsg('Thank you. Quote has been sent successfully. I will get in touch soon.')
         let newState = {}
         for(let key in state){
           newState[key] = ''          
         }
         setState(newState)
       })
-      .catch((error) => alert(error))
+      .catch((error) => {
+        setMsg('Something went wrong with sending your quote information. Kindly try again later.')
+      })
 
     e.preventDefault();
 
@@ -123,7 +126,7 @@ const Contact = (props) => {
             Request a quote
           </button>
         </form>
-        <p className={`${contactStyles.msg} + ${errorMsg ? '' : " hidden"} `}>{errorMsg}</p>
+        <p className={`${contactStyles.msg} + ${msg ? '' : " hidden"} `}>{msg}</p>
 
       </section>
     </Layout>
