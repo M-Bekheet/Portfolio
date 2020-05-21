@@ -6,14 +6,12 @@ body{
 }
 
 .layout{
-  background: url('../../images/glassy-bg.jpg');
-  background-size: cover;
   color: #fff;
   min-height: 100vh;
   overflow: hidden;
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
-
 
 .content{
   width: 82%;
@@ -23,7 +21,7 @@ body{
   padding-bottom: 70px;
   float: right;
   overflow: hidden;
-  background: rgba(11,17,36,0.6);
+  background: rgba(11,17,36,0.9);
 }
 
 

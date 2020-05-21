@@ -57,7 +57,7 @@ const Contact = (props) => {
       <SEO title="Contact" />
       <section className={contactStyles.contact}>
         <h3 className="section-title">Contact</h3>
-
+        <address className={contactStyles.note}>*Send me a direct email: <a href="mailto:mlartwel@gmail.com" rel="noopener">mlartwel@gmail.com</a> or fill the form.</address>
         <form 
           name="contact"
           method="post"
