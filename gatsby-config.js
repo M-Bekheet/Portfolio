@@ -47,7 +47,20 @@ module.exports = {
         display: 'swap'
       }
     },
-    `gatsby-plugin-netlify-headers`
+    {
+      resolve: `gatsby-plugin-netlify-headers`,
+      options: {
+        mergeSecurityHeaders: false,
+        headers: {
+          '/*': ['X-Frame-Options: sameorigin'],
+          "/**/*.html": ["cache-control: public, max-age=300"],
+          "/static/*": ["cache-control: public, max-age=31536000, immutable"],
+          "/*.js": ["cache-control: public, max-age=31536000, immutable"],
+          "/*.css": ["cache-control: public, max-age=31536000, immutable"],
+          "/sw.js": ["cache-control: public, max-age=0, must-revalidate"],
+        },
+      },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
