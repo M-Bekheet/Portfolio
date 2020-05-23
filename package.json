@@ -13,7 +13,6 @@
     "gatsby-plugin-anchor-links": "^1.1.1",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.4.2",
-    "gatsby-plugin-netlify-headers": "^1.0.1",
     "gatsby-plugin-offline": "^3.2.1",
     "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-sass": "^2.3.1",
