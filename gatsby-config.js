@@ -3,8 +3,10 @@ module.exports = {
     title: `Mahmoud Ahmed`,
     description: `Freelance Front-end / ReactJS Developer`,
     author: `@7odaGeek`,
+    siteUrl: `https://www.web-dev.works`
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
