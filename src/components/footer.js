@@ -11,9 +11,6 @@ const Footer = ({ title = "Mahmoud Ahmed"}) => {
         {` `}
         <a href="https://www.twitter.com/7odaGeek">{title}</a>
       </span>
-      <span>
-        , Designed By <a href="https://dribbble.com/realvjy">vijay verma</a>
-      </span>
     </footer>
   )
 }

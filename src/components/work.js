@@ -7,11 +7,12 @@ import workStyles from './styles/work.module.scss'
 export const Work = () => {
 
   const imagesInfo = {
-    pomodoro: ['Pomodoro Web App', 'https://pomodoro-react-app.netlify.com', 'https://github.com/Lartwel/pomodoro-app'],
+    pomodoro: ['Pomodoro React Web App', 'https://pomodoro-react-app.netlify.com', 'https://github.com/Lartwel/pomodoro-app'],
     // portfolio: ['Portfolio', 'http://mahmoud-ahmed.eb2a.com/'],
     restaurant: ['Restatuant Website', 'https://goo.gl/XgzNJe'],
     weather: ['Weather App Landing Page', 'https://goo.gl/sDYhJk'],
-    wooder: ['Furniture Agency Website', 'https://lartwel.github.io/wooder', 'https://github.com/Lartwel/Wooder']
+    wooder: ['Furniture Agency Website', 'https://lartwel.github.io/wooder', 'https://github.com/Lartwel/Wooder'],
+    forecaster: ['Weather Forecaster React App', 'https://weather-forecaster-app.netlify.app/', 'https://github.com/Lartwel/weather-forecaster']
   }
 
   const data = useStaticQuery(graphql`
