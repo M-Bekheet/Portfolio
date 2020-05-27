@@ -65,3 +65,11 @@
   }
 }
 
+@media all and (max-width: 500px){
+  .sample &:last-of-type{
+   .img img{
+     height: 60% !important;
+   } 
+  }
+}
+

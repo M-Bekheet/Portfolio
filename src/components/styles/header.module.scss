@@ -47,7 +47,6 @@
   margin: 0;
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
 
   &:hover{
     background: rgba(242,242,242,0.03);
@@ -60,7 +59,7 @@
     outline: none;
     padding-left: 20%;
     height: 100%; 
-    line-height: 2.8em;
+    line-height: 3.3em;
     width: 100%;
 
     &:active{
@@ -115,6 +114,9 @@
       &:first-of-type{
         margin-top: 10px;
       }
+      a{
+        padding-left: 0;
+      }
     }
 
     .toggleNav{
@@ -148,7 +150,6 @@
     
     :global .open{
       max-height: 600px;
-      padding-bottom: 10px;
     }
   }
 }

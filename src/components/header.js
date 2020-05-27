@@ -1,8 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { Link, useStaticQuery, graphql} from "gatsby"
-import { AnchorLink } from "gatsby-plugin-anchor-links";
-import Scrollspy from 'react-scrollspy'
 import Img from 'gatsby-image'
 import headerStyles from './styles/header.module.scss';
 
@@ -21,8 +19,36 @@ const Header = ({ siteTitle }) => {
   `)
 
 
-
   const [navOpen, setNavOpen] = useState(false)
+
+  useEffect(() => {
+    const trackActiveItem = () => {
+      const work = document.querySelector('#work'),
+            testimonials = document.querySelector('#testimonials'),
+            scrollPosition = document.documentElement.scrollTop + 40 || document.body.scrollTop + 40,
+            nav = document.querySelector(`.${headerStyles.nav}`);
+
+      if(scrollPosition < work.offsetTop ){
+        if (document.querySelector('.active-nav-link')) {
+          document.querySelector('.active-nav-link').classList.remove('active-nav-link')
+          nav.querySelector('a[href="/"').classList.add('active-nav-link')
+        }
+      } else if(scrollPosition < testimonials.offsetTop){
+        document.querySelector('.active-nav-link').classList.remove('active-nav-link')
+        nav.querySelector('a[href="/#work"').classList.add('active-nav-link')
+      } else{
+        document.querySelector('.active-nav-link').classList.remove('active-nav-link')
+        nav.querySelector('a[href="/#testimonials"').classList.add('active-nav-link')
+      }
+    }
+
+    if (!window.location.href.includes('blog') && !window.location.href.includes('contact')){
+      window.addEventListener('scroll', trackActiveItem)
+    } else{
+      window.removeEventListener('scroll', trackActiveItem)
+    }
+    return () => window.removeEventListener('scroll', trackActiveItem)
+  }, [])
 
   const handleNavClick = () =>{
     setNavOpen(!navOpen)
@@ -45,32 +71,25 @@ const Header = ({ siteTitle }) => {
         <div className={headerStyles.imgWrapper}>
           <Img className={headerStyles.img} fluid={data.avatar.childImageSharp.fluid} alt="Developer" />
         </div>
-        <Scrollspy items={['about', 'work', 'testimonials']} currentClassName="active-nav-link"  >
-          <li className={headerStyles.navItem}>
-            <AnchorLink
-              to="/"
-              title="About"
-            />
-          </li>
-          <li className={headerStyles.navItem}>
-            <AnchorLink
-              to="/#work"
-              title="Work"
-            />
-          </li>
-          <li className={headerStyles.navItem}>
-            <AnchorLink
-              to="/#testimonials"
-              title="Testimonials"
-            />
-          </li>
-          <li className={headerStyles.navItem}>
-            <Link activeClassName={"active-nav-link"} to="/blog">Blog</Link>
-          </li>
-          <li className={headerStyles.navItem}>
-            <Link activeClassName={"active-nav-link"} to="/contact">Contact</Link>
-          </li>
-        </Scrollspy>
+           
+        <li className={headerStyles.navItem}>
+          <Link activeClassName={"active-nav-link"} to="/">About</Link>
+        </li>
+        <li className={headerStyles.navItem}>
+          <Link activeClassName={"active-nav-link"} to="/#work">Work</Link>
+        </li>
+        <li className={headerStyles.navItem}>
+          <Link activeClassName={"active-nav-link"} to="/#testimonials">Testimonials</Link>
+        </li>
+      <li className={headerStyles.navItem}>
+        <Link activeClassName={"active-nav-link"} to="/blog">Blog</Link>
+      </li>
+      <li className={headerStyles.navItem}>
+        <Link activeClassName={"active-nav-link"} to="/contact">Contact</Link>
+      </li>
+          
+        
+        
       </nav>
     </header>
   )
