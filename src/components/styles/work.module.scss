@@ -11,12 +11,6 @@
   flex-basis: 45%;
   text-align: center;
   margin-bottom: 25px;
-
-  &:last-of-type{
-   .img img{
-     height: 90% !important;
-   } 
-  }
 }
 
 .img{
@@ -25,8 +19,7 @@
   height: 280px;  
     
   img{
-    height: auto !important;
-  
+    object-position: top !important;
   }
 
 }
@@ -49,9 +42,6 @@
   .sample{
     flex-basis: 45%;
   }
-  .img{
-    height: 180px;
-  }
 }
 
 @media all and (max-width: 768px){
@@ -59,17 +49,22 @@
     flex-basis: 100%;
     margin-bottom: 50px;
   }
+}
 
+@media (max-width: 768px) and (min-width: 500px){
   .img{
-    height: 400px;
+      height: 480px;  
   }
 }
 
 @media all and (max-width: 500px){
-  .sample &:last-of-type{
-   .img img{
-     height: 60% !important;
-   } 
+  .sample:last-of-type{
+   .img{
+     height: 200px;
+     img{
+      object-position: center center !important;
+    } 
+   }
   }
 }
 
