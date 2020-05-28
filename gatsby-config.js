@@ -38,12 +38,18 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          `raleway\:400,700`,
-        ],
-        display: 'swap'
+        fonts: {
+          google: [
+            {
+              family: "Raleway",
+              variants: ["400", "700"],
+              fontDisplay: 'swap',
+              //strategy: 'selfHosted' // 'base64' || 'cdn'
+            },
+          ],
+        }
       }
     },
     {

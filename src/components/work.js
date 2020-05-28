@@ -25,7 +25,7 @@ export const Work = () => {
           id
           childImageSharp {
             fluid {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -35,7 +35,7 @@ export const Work = () => {
           id
           childImageSharp {
             fixed(width:20) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
           }
         }
