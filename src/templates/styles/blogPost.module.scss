@@ -2,6 +2,15 @@
   margin-top: 90px;
   margin-bottom: 50px;
   letter-spacing: 0.8px;
+
+  a {
+    color: #ff5722;
+    text-decoration: underline;
+
+    &:hover {
+      color: lighten($color: #ff5722, $amount: 10%);
+    }
+  }
 }
 
 .post blockquote {
@@ -54,11 +63,11 @@ p {
 }
 
 @media all and (min-width: 769px) {
-  .post *:not(img):not(.postImg):not(.postTitle) {
+  .post *:not(img):not(a):not(.postImg):not(.postTitle) {
     margin-left: 15%;
   }
   :global blockquote p {
     margin-left: 0 !important;
-    border: 0 solid red;
+    border: 0 solid;
   }
 }
