@@ -1,35 +1,49 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+    <img alt="Avatar" src="https://web-dev.works/static/c498f66ac2e2bb1cf48fbd92f0098da2/6d161/avatar.png" width="80" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby's default starter
+  Portfolio
 </h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+Personal Portfolio built in Gatsby/React.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+## 🔥 Features
+ 
+  * The Portfolio is blazing fast. Check it's score [here](https://gtmetrix.com/reports/web-dev.works/wdxybj8q)
+  * The Blog is integrated with Contentful API.
+  * Google Analytics already works.
+  * Styles made in flexbox, made it easier to be styled for different devices' screens.
+  * The contact form works with Netlify Forms (no back-end work needed)
+  * Netlify headers and assets cache are optimized. 
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1. **Clone Project.**
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
-
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+  ```shell
+  git clone https://github.com/Lartwel/portfolio
+  ```
 
 1.  **Start developing.**
+
+    Add your .env file in portfolio/ directory.
+    Add your Contentful & Google Analytics API keys to .env file.
+    
+    ```shell
+    CONTENTFUL_SPACE_ID=value_here
+    CONTENTFUL_ACCESS_TOKEN=value_here
+    GA_TRACKING_ID=value_here
+    ```
+    
 
     Navigate into your new site’s directory and start it up.
 
     ```shell
-    cd my-default-starter/
-    gatsby develop
+    cd portfolio/
+    yarn start
     ```
 
 1.  **Open the source code and start editing!**
@@ -38,7 +52,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    Open the `portfolio` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
 ## 🧐 What's inside?
 
@@ -47,6 +61,10 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     .
     ├── node_modules
     ├── src
+      ├── components
+      ├── images
+      ├── pages
+      ├── templates
     ├── .gitignore
     ├── .prettierrc
     ├── gatsby-browser.js
@@ -56,7 +74,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     ├── LICENSE
     ├── package-lock.json
     ├── package.json
-    └── README.md
+    └── README.md 
 
 1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
 
@@ -82,18 +100,8 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 12. **`README.md`**: A text file containing useful reference information about your project.
 
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
 ## 💫 Deploy
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
