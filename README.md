@@ -1,6 +1,6 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
+  <a href="https://www.web-dev.works">
     <img alt="Avatar" src="https://web-dev.works/static/c498f66ac2e2bb1cf48fbd92f0098da2/6d161/avatar.png" width="80" />
   </a>
 </p>
@@ -8,16 +8,28 @@
   Portfolio
 </h1>
 
+
+
+
 Personal Portfolio built in Gatsby/React.
+
+
+
+
 
 ## 🔥 Features
  
-  * The Portfolio is blazing fast. Check it's score [here](https://gtmetrix.com/reports/web-dev.works/wdxybj8q)
+  * The Portfolio is blazing fast. Check it's performance score on [GTMetrix](https://gtmetrix.com/reports/web-dev.works/smEil0sV)
   * The Blog is integrated with Contentful API.
   * Google Analytics already works.
   * Styles made in flexbox, made it easier to be styled for different devices' screens.
   * The contact form works with Netlify Forms (no back-end work needed)
   * Netlify headers and assets cache are optimized. 
+
+
+
+
+
 
 ## 🚀 Quick start
 
@@ -53,6 +65,11 @@ Personal Portfolio built in Gatsby/React.
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
     Open the `portfolio` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+
+
+
+
+
 
 ## 🧐 What's inside?
 
@@ -99,6 +116,10 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
 12. **`README.md`**: A text file containing useful reference information about your project.
+
+
+
+
 
 
 ## 💫 Deploy
