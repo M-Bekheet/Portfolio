@@ -10,8 +10,7 @@
 
 
 
-
-Personal Portfolio built in Gatsby/React.
+  > Personal Portfolio built in Gatsby/React.
 
 
 
