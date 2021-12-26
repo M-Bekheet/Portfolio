@@ -1,0 +1,57 @@
+{
+  "name": "mahmoud-ahmed-portfolio",
+  "private": true,
+  "description": "Front-end Developer Portfolio",
+  "version": "0.1.0",
+  "author": "Mahmoud Ahmed <mlartwel@gmail.com>",
+  "proxy": "http://localhost:5000/",
+  "dependencies": {
+    "@contentful/rich-text-react-renderer": "^13.4.0",
+    "gatsby": "^2.21.22",
+    "gatsby-background-image": "^1.1.1",
+    "gatsby-image": "^2.4.3",
+    "gatsby-plugin-google-analytics": "^2.3.2",
+    "gatsby-plugin-manifest": "^2.4.2",
+    "gatsby-plugin-netlify": "^2.3.3",
+    "gatsby-plugin-offline": "^3.2.1",
+    "gatsby-plugin-react-helmet": "^3.3.1",
+    "gatsby-plugin-sass": "^2.3.1",
+    "gatsby-plugin-sharp": "^2.6.2",
+    "gatsby-plugin-sitemap": "^2.4.3",
+    "gatsby-plugin-webfonts": "^1.1.2",
+    "gatsby-source-contentful": "^2.3.5",
+    "gatsby-source-filesystem": "^2.3.1",
+    "gatsby-transformer-sharp": "^2.5.2",
+    "node-sass": "^4.14.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.0.0",
+    "react-responsive-carousel": "^3.2.7"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "prettier": "2.0.5"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "env-cmd -f .env gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "server": "env-cmd -f .env nodemon server/index.js",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lartwel/portfolio"
+  },
+  "bugs": {
+    "url": "https://github.com/lartwel/portfolio/issues"
+  }
+}

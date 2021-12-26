@@ -1,0 +1,73 @@
+.post {
+  margin-top: 90px;
+  margin-bottom: 50px;
+  letter-spacing: 0.8px;
+
+  a {
+    color: #ff5722;
+    text-decoration: underline;
+
+    &:hover {
+      color: lighten($color: #ff5722, $amount: 10%);
+    }
+  }
+}
+
+.post blockquote {
+  border-left: 2px solid #ddd;
+  padding-left: 7px;
+  font-weight: 700;
+
+  &:before {
+    content: "";
+  }
+}
+
+h2,
+h3,
+h4,
+p {
+  max-width: 630px;
+}
+h2 {
+  margin-top: 3rem;
+}
+
+h3 {
+  margin-top: 2rem;
+}
+p {
+  margin: 0 0 0.6rem;
+  line-height: 1.25rem;
+  font-size: 16px;
+  color: #f7f7f7;
+}
+.postTitle {
+  font-size: 2rem;
+  margin-bottom: 5rem;
+}
+
+.postDate {
+  color: #f7f7f7;
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 1.4rem;
+}
+
+.postImg {
+  text-align: center;
+
+  img {
+    max-width: 80%;
+  }
+}
+
+@media all and (min-width: 769px) {
+  .post *:not(img):not(a):not(.postImg):not(.postTitle) {
+    margin-left: 15%;
+  }
+  :global blockquote p {
+    margin-left: 0 !important;
+    border: 0 solid;
+  }
+}
