@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.web-dev.works">
-    <img alt="Avatar" src="https://web-dev.works/static/c498f66ac2e2bb1cf48fbd92f0098da2/6d161/avatar.png" width="80" />
+    <img alt="Avatar" src="https://mahmoud-bekheet.netlify.app/static/c498f66ac2e2bb1cf48fbd92f0098da2/6d161/avatar.png" width="80" />
   </a>
 </p>
 <h1 align="center">
@@ -18,10 +18,10 @@
 
 ## 🔥 Features
  
-  * The Portfolio is blazing fast. Check it's performance score on [GTMetrix](https://gtmetrix.com/reports/web-dev.works/smEil0sV)
+  * The Portfolio is blazing fast. Check its performance score on [GTMetrix](https://gtmetrix.com/reports/web-dev.works/smEil0sV)
   * The Blog is integrated with Contentful API.
   * Google Analytics already works.
-  * Styles made in flexbox, made it easier to be styled for different devices' screens.
+  * Styles made in Flexbox, made it easier to be styled for different devices' screens.
   * The contact form works with Netlify Forms (no back-end work needed)
   * Netlify headers and assets cache are optimized. 
 
@@ -40,7 +40,7 @@
 
 1.  **Start developing.**
 
-    Add your .env file in portfolio/ directory.
+    Add your .env file to the portfolio/ directory.
     Add your Contentful & Google Analytics API keys to .env file.
     
     ```shell
@@ -92,7 +92,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     ├── package.json
     └── README.md 
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) that are automatically installed.
 
 2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
 
